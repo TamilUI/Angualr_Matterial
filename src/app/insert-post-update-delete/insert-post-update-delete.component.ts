@@ -33,8 +33,6 @@ constructor(private formbuilder:FormBuilder, private api: ServiceService, public
 
 @Input() name!: string
 
-
-
   ngOnInit(){
     this.formValue = this.formbuilder.group({
     firstName :[''],
