@@ -1,0 +1,88 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  .example-container {
+    width: 100%;
+    height:100%;
+    margin: 0px;
+    
+  }
+  .mat-flat-button, .mat-raised-button, .mat-fab, .mat-mini-fab {
+    color:#fff;
+    
+}
+  .mat-drawer-container{
+    height: 100%;
+    z-index: auto!important;
+  }
+  .mat-drawer-content{
+    z-index: auto!important;
+  }
+  .mat-drawer-inner-container {
+    
+    background: #22328c;
+}
+
+.rightmain{
+  margin-left: 16%!important;
+}
+.nav{
+  height: 100%!important;
+}
+.sidenav{
+  width: 221px;
+}
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}
+
+.example-right-align {
+  text-align: right;
+}
+
+input.example-right-align::-webkit-outer-spin-button,
+input.example-right-align::-webkit-inner-spin-button {
+  display: none;
+}
+
+input.example-right-align {
+  -moz-appearance: textfield;
+}
+.mat-form-field {
+  display: block!important;
+
+}
+a {
+  color: #fff;
+  text-decoration: underline;
+
+  display: inline-block;
+}
+.nav a{
+  width: 100%;
+    float: left;
+}
+.sidenav button{
+  width: 100%;
+  text-align: left;
+  border-bottom: 1px #3f51b5  solid;
+  PADDING: 10PX;
+  float: left;
+}
+.mat-toolbar.mat-primary {
+  background: #03a9f4;
+  color: #fff;
+}
+table {
+  width: 100%;
+}
+.mat-card{
+  margin-bottom: 1em;
+}
+
+
+

@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "id": 2,
+      "firstName": "siva",
+      "lastName": "rajanss",
+      "email": "siva@gmail.com",
+      "mobile": 898685658465845,
+      "salary": "121522"
+    },
+    {
+      "id": 3,
+      "firstName": "kalai",
+      "lastName": "selvan",
+      "email": "kalai@gmail.com",
+      "mobile": 9595656565165,
+      "salary": "565651"
+    },
+    {
+      "id": 4,
+      "firstName": "kk",
+      "lastName": "kk",
+      "email": "kk",
+      "mobile": 555555,
+      "salary": "55"
+    },
+    {
+      "id": 5,
+      "firstName": "Tamil",
+      "lastName": "Arasan",
+      "email": "tamil@fefsfsf",
+      "mobile": 6566545665465,
+      "salary": "555"
+    }
+  ],
+  "comments": [],
+  "profile": {
+    "name": "typicode"
+  }
+}

@@ -1,0 +1,121 @@
+<nav class="navbar navbar-light bg-primary mt-3 mx-2">
+      <div class="container-fluid">
+      <header style="color: aliceblue;">Angualr Insert Post Update Delete</header>
+      
+     
+      </div>
+      </nav>
+
+
+  <div class="container">
+  <mat-card>
+    <div class="d-flex justify-content-end">
+        
+      <button  mat-raised-button color="primary" (click)='clickaddemployee()'  class="btn btn-success" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><mat-icon>add_circle</mat-icon> Add Employee </button>
+      
+    </div>
+  <table class="table mt-3"  matSort (matSortChange)="employeeData($event)">
+  
+  <thead>
+    <tr>
+      <th mat-sort-header="id" scope="col">Employee Id</th>
+      <th mat-sort-header="firstName" scope="col">First Name</th>
+      <th mat-sort-header="lastName" scope="col">Last Name</th>
+      <th mat-sort-header="email" scope="col">Email Id</th>
+      <th mat-sort-header="mobile" scope="col">Mobile No</th>
+      <th mat-sort-header="salary" scope="col">Salary</th>
+      <th  scope="col">Action</th>
+    </tr>
+  </thead>
+  <tbody >
+ 
+  <tr *ngFor='let emplolye of  employeeData' >
+  <td>{{emplolye.id}}</td>
+  <td>{{emplolye.firstName}}</td>
+  <td>{{emplolye.lastName}}</td>
+  <td>{{emplolye.email}}</td>
+  <td>{{emplolye.mobile}}</td>
+  <td>{{emplolye.salary}}</td>
+  
+  <td>
+      <button mat-raised-button color="primary" (click)='onEdit(emplolye)' class=" btn-info mx-3"  type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><mat-icon>edit</mat-icon> Edit</button>
+      <button mat-raised-button color="warn" (click)='deletEmploye(emplolye)' aria-label="Show an example snack-bar" class="btn btn-danger"><mat-icon>delete</mat-icon> Delete</button>
+    
+    
+  </td>
+  
+  </tr>
+
+  
+  </tbody>
+  
+  
+  </table>
+ 
+
+
+<ng-template #noNamesTemplates>
+  no names fund...!
+</ng-template>
+
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" >
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel" style="font-size: medium;">Employee Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form [formGroup]="formValue">
+
+            <div class="mb-3">
+              <mat-form-field appearance="outline">
+                <mat-label>First Name</mat-label>
+              <input type="text" matInput formControlName="firstName"  required>
+            </mat-form-field>
+            </div>
+
+            <div class="mb-3">
+              <mat-form-field appearance="outline">
+              <mat-label>Last Name</mat-label>
+              <input type="text" matInput formControlName="lastName"  required>
+            </mat-form-field>
+            </div>
+
+            <div class="mb-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Email Id</mat-label>
+              <input type="email" matInput formControlName="email"  required>
+            </mat-form-field>
+            </div>
+
+            <div class="mb-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Mobile No</mat-label>
+              <input type="number" matInput formControlName="mobile"  required>
+            </mat-form-field>
+            </div>
+  
+            <div class="mb-3">
+              <mat-form-field appearance="outline">
+                <mat-label>Salary</mat-label>
+              <input type="text" matInput formControlName="salary"  required>
+            </mat-form-field>
+            </div>
+          
+  
+        
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button mat-raised-button color="primary" type="button" id="cancel" class="btn btn-primary mx-2"  data-bs-dismiss="modal"><mat-icon>cancel</mat-icon> Close</button>
+          <button mat-raised-button color="primary" type="button" *ngIf='showadd' (click)="postEmployeeDetails()" class="btn btn-primary" [disabled]="formValue.invalid"><mat-icon>add_circle</mat-icon> Add</button>
+          <button mat-raised-button color="primary" type="button" *ngIf='showupdate' (click)="updateEmployeeDetails()" class="btn btn-primary"><mat-icon>update</mat-icon> Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</mat-card>

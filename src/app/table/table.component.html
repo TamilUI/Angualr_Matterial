@@ -1,0 +1,41 @@
+<BR>
+    
+<br>
+<div class="container">
+<mat-card>
+    <h3>NgFor, Ngif, NgSwitchcase, </h3>
+<div class="row">
+<div class="col-md-12">
+
+        <div *ngIf="names; else noNamesTemplates">
+        <div *ngFor = "let name of names">
+        <div [ngSwitch]="name.gender">
+
+        <div class="malebox" *ngSwitchCase="'M'">
+         {{name.Name}}
+        </div>
+
+        <div class="femalebox" *ngSwitchCase="'F'">
+            {{name.Name}}
+        </div>
+
+        <div class="" *ngSwitchDefault="''">
+            {{name.Name}}
+        </div>
+
+       </div>  
+     </div>
+    </div>
+    <ng-template #datas>
+        no names fund...!
+    </ng-template>
+    <ng-template #noNamesTemplates>
+        no names fund...!
+    </ng-template>
+
+</div>
+</div>
+</mat-card>
+
+
+</div>

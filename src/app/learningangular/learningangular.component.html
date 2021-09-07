@@ -1,0 +1,107 @@
+
+<BR>
+<div class="container">
+
+<mat-card>
+    <h3>Register Student</h3>
+<div class="row">
+  <form class="RegistrForm" #RegistrForm="ngForm"  autocomplete="off">
+<div class="col-md-12">
+<div class="col-md-6">
+
+
+<mat-form-field appearance="outline">
+    <mat-label>Enter your Name</mat-label>
+    <input matInput type="text" name="Username" [(ngModel)]="Username" required>
+  
+   
+  </mat-form-field>
+
+</div>
+<div class="col-md-6">
+<mat-form-field appearance="outline">
+    <mat-label>Enter Your Password</mat-label>
+    <input matInput  matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="password" required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+  </mat-form-field>
+</div>
+
+<div class="col-md-6">
+
+
+    <mat-form-field appearance="outline">
+        <mat-label>Enter your Email</mat-label>
+        <input type="email" matInput name="email" [(ngModel)]="email" required>
+      
+       
+      </mat-form-field>
+    
+    </div>
+
+   
+    
+       <div class="col-md-6">
+        <mat-form-field appearance="outline">
+            <mat-label>Select Deportment</mat-label>
+              <mat-select name="SD" [(ngModel)]="selecetdeports" required>
+                <mat-option *ngFor="let select of selecetdeport" [value]=select.sd>{{select.sd}}</mat-option>
+              
+            </mat-select>
+          </mat-form-field>
+        </div>
+
+        <div class="col-md-6">
+          <mat-form-field appearance="outline">
+              <mat-label>Select Category </mat-label>
+                <mat-select name="SC" [(ngModel)]="selececategorys"  required>
+                  <mat-option *ngFor="let category of selececategory" [value]=category.sc>{{category.sc}}</mat-option>
+                
+              </mat-select>
+            </mat-form-field>
+          </div>
+          
+          <div class="col-md-6" [hidden]="selececategorys !== 'Others'" >
+            <mat-form-field appearance="outline">
+              <mat-label>Others</mat-label>
+              <input matInput type="text" name="Others" [disabled]="selececategorys !== 'Others'"   [(ngModel)]="Others" required >
+            
+             
+            </mat-form-field>
+          </div>
+
+          <div class="col-md-6">
+      
+            <mat-form-field appearance="outline">
+                <mat-label>Choose DOB</mat-label>
+                <input matInput [matDatepicker]="picker"  name="DOB" #input="ngModel" [(ngModel)]="DOB"    [min]="minDate" [max]="maxDate" required>
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker disabled="false"></mat-datepicker>
+                <mat-error *ngIf="input.hasError('matDatepickerMax')">Date should be inferior</mat-error>
+              </mat-form-field>
+    
+        </div>
+
+
+        <div class="col-md-6">
+          <mat-radio-group aria-label="Select an option" name="MF" [(ngModel)]="MF" required>
+            <mat-radio-button class="mx-2" *ngFor="let gender of selecetgender" [value]=gender.sg>{{gender.sg}}</mat-radio-button>
+            
+          </mat-radio-group>
+        </div>
+        <br><br>
+        <button mat-raised-button color="primary" [disabled]="!RegistrForm.valid"  (click)="UserRegister()"><mat-icon>send</mat-icon> Register</button>
+</div>
+</form>
+</div>
+
+
+
+
+</mat-card>
+
+<br><br>
+
+
+</div>

@@ -1,0 +1,50 @@
+
+<div class="container">
+    <mat-card>
+        <h3>Login Student</h3>
+    <div class="row">
+
+      <form [formGroup]='myform' (ngSubmit)='onSubmit()' autocomplete="off">
+    <div class="col-md-12">
+    <div class="col-md-6">
+    <mat-form-field appearance="outline">
+        <mat-label>Enter your Name</mat-label>
+        <input matInput type="text" formControlName="Username" [(ngModel)]="Username" required>
+      </mat-form-field>
+
+      <div *ngIf="myform.controls['Username'].invalid && (myform.controls['Username'].dirty || myform.controls['Username'].touched)" class="alert alert-danger">
+        <div *ngIf="myform.controls['Username'].errors.required">
+        Name is required.
+      </div>
+    </div>
+
+    </div>
+    <div class="col-md-6">
+     <mat-form-field appearance="outline">
+        <mat-label>Enter Your Password</mat-label>
+        <input matInput  type="text"  formControlName="Password" [(ngModel)]="Password" required >       
+     </mat-form-field>
+
+     <div *ngIf="myform.controls['Password'].invalid && (myform.controls['Password'].dirty || myform.controls['Password'].touched)" class="alert alert-danger">
+      <div *ngIf="myform.controls['Password'].errors.required">
+        Password is required.
+      </div>
+      <!-- <div *ngIf="f.Password.errors.required">Password is required</div>
+      <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div> -->
+
+      </div>
+
+    <button type="submit" [disabled]="!myform.valid" class="btn btn-primary">Submit</button>
+    </div>
+    </div>
+    </form>
+    <p>Form value: {{myform.value | json | uppercase }}</p>
+    <p>Form status: {{ myform.status | json }}</p>
+    </div>
+    </mat-card>
+    </div>
+
+    <p class="mx-4 mt-4" style="font-size: 20px;font-weight: 800;color: orange;">{{_count.counter}}</p>
+    
+   <p>{{myId}}</p>
+  

@@ -1,0 +1,23 @@
+::ng-deep .redNoMatch
+  {
+    color:rgb(255, 255, 255);
+    background: #F44336 !important;
+  }
+
+  ::ng-deep .mat-simple-snackbar-action
+{
+  color:rgb(255, 255, 255);
+
+}
+
+::ng-deep .Success
+  {
+    color:rgb(255, 255, 255);
+    background: #22b904 !important;
+  }
+
+  ::ng-deep .mat-simple-snackbar-action
+{
+  color:rgb(255, 255, 255);
+
+}

@@ -1,0 +1,45 @@
+
+<br>
+<div class="container">
+<mat-card>
+    <h3>Login Student</h3>
+<div class="row" >
+  <form class="loginForm" #loginForm="ngForm"  autocomplete="off">
+
+<div class="col-md-12" *ngIf="showWhen">
+<div class="col-md-4">
+<mat-form-field appearance="outline">
+    <mat-label>Enter your Name</mat-label>
+    <input matInput type="text"  name="Username" [(ngModel)]="Username" required >
+
+   
+
+  </mat-form-field>
+</div>
+<div class="col-md-4">
+<mat-form-field appearance="outline">
+    <mat-label>Enter Your Password</mat-label>
+
+    <input matInput  matInput [type]="hide ? 'password' : 'text'" name="Password" [(ngModel)]="Password" required>
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+      <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </button>
+
+  </mat-form-field>
+</div>
+
+<button mat-raised-button color="primary"  [disabled]="loginForm.invalid"  (click)="UserLogin()"><mat-icon>send</mat-icon> Login</button>
+<!-- <div class="col-xs-12 col-sm-12 col-md-6">      
+  <p class="forgotPwd">
+  <a href="javascript:void(0)" (click)="reset()" style=" color:blue"> Forgot password? </a>
+  </p>
+  <p class="forgotPwd">
+  <a href="javascript:void(0)" (click)="signup()"  style=" color:blue"> Register now</a>
+  </p>
+</div> -->
+
+</div>
+</form>
+</div>
+</mat-card>
+</div>

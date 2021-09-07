@@ -1,0 +1,35 @@
+
+<!--<div *ngFor='let iteam of data'>
+    {{iteam.id}} {{iteam.userId}}
+</div>-->
+<Br><br>
+<div class="container">
+
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Employee ID</th>
+        <th>Employee Name</th>
+        <th>Employee Gender</th>
+        <th>Employee Designation</th>
+        <th>Country</th>
+        <th>City</th>
+        <th>Status Code</th>
+        <th>Message</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr  *ngFor='let iteam of data'>
+        <td>  {{iteam.EmployeeID}} </td>
+        <td>  {{iteam.EmployeeName}} </td>
+        <td>  {{iteam.EmployeeGender}} </td>
+        <td>  {{iteam.EmployeeDesignation}} </td>
+        <td>  {{iteam.Country}} </td>
+        <td>  {{iteam.City}} </td>
+        <td>  {{iteam.StatusCode}} </td>
+        <td>  {{iteam.Message}} </td>
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
