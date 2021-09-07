@@ -6,7 +6,7 @@ import { MatSnackBar, MatSnackBarConfig } from '@angular/material/snack-bar';
 })
 export class SnackBarService {
 
-  constructor(public snackBar: MatSnackBar) { }
+ constructor(public snackBar: MatSnackBar) { }
 
 
    //Delet Employe snackBar//
@@ -32,15 +32,16 @@ export class SnackBarService {
 
 
   UserLogin(message:string){
+    // let statuscolor:string = ""
+    
+    // if(message == "Logged in Successfully"){
+    //   statuscolor = 'Success'
+    // }else {
+    //   statuscolor = 'redNoMatch'
+    // }
+    
     this.UserloginopenSnackBarWithAction(message,'X');
   }
-
-
-   //check login snackBar//
-
-
-
-
 
 
   AddopenSnackBarWithAction(message: string, action: string) {
@@ -74,11 +75,18 @@ export class SnackBarService {
 
 
   UserloginopenSnackBarWithAction(message: string, action: string) {
+    let statuscolor:string = ""
+    if(message == "Logged in Successfully"){
+      statuscolor = 'Success'
+    }else {
+      statuscolor = 'redNoMatch'
+    }
+
     this.snackBar.open(message, action, {
       duration: 4000,
       horizontalPosition: 'center',
       verticalPosition: 'top',
-      panelClass: ['Success']
+      panelClass: [statuscolor]
     });
   }
 

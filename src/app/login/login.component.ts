@@ -34,7 +34,12 @@ export class LoginComponent implements OnInit {
      
       this.showWhen = true;
       console.log("Logged in Successfully");
-      // this.router.navigate(['/lifecycle']);
+
+      setTimeout(() => {
+        this.router.navigate(['/lifecycle']);
+      }, 3000);
+
+   
 
      
     }
