@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class CoronaService {
-  country: any;
+  
   constructor( private http: HttpClient) { }
 
  
@@ -15,8 +15,8 @@ getcountrys(): Observable<any>{
   return this.http.get<any>(url)
 }
 
-getcoronaRealtimedata(country:any):Observable<any>{
-  const url= "https://api.covid19api.com/total/dayone/country/"+country
+getcoronaRealtimedata(allcountry:any):Observable<any>{
+  const url= "https://api.covid19api.com/total/dayone/country/"+allcountry
   return this.http.get<any>(url)
 }
 }

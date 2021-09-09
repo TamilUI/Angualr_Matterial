@@ -11,7 +11,7 @@ export class CoronaComponent implements OnInit {
 // headerimg: any='https://www.ispor.org/images/default-source/news/covid-big-but-smaller-v5.png?sfvrsn=93527de4_0'
 
   countrys: any;
-  country:any;
+  allcountry:any;
   Confirmed: any;
   Recovered:any;
   Deaths:any;
@@ -29,11 +29,13 @@ export class CoronaComponent implements OnInit {
     })
 
   }
-
-
+ 
+  
   getcoronadata(){
- this.corona.getcoronaRealtimedata(this.country).subscribe((data)=>{
+
+ this.corona.getcoronaRealtimedata(this.allcountry).subscribe((data)=>{
    console.log(data)
+ 
    var index = data.length -1
    this.Country   = data[index].Country
    this.Confirmed = data[index].Confirmed
@@ -44,7 +46,7 @@ export class CoronaComponent implements OnInit {
  }
 
  getcountry(country:any){
- this.country = country
+ this.allcountry = this.allcountry
  }
 
 

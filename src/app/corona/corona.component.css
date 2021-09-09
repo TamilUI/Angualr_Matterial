@@ -1,12 +1,12 @@
 .bg{
-   background-image: url('https://www.ispor.org/images/default-source/news/covid-big-but-smaller-v5.png?sfvrsn=93527de4_0');
+   background-image:-webkit-linear-gradient(top, rgb(255 255 255 / 18%) 0%, rgb(255 255 255 / 87%) 59%, rgb(0 0 0 / 5%) 100%),  url('https://www.ispor.org/images/default-source/news/covid-big-but-smaller-v5.png?sfvrsn=93527de4_0');
     color: #fff;
     padding: 20px;
     background-size: 100%;
 }
-.bgselect{
+/* .bgselect{
     background: rgb(255, 255, 255);
-}
+} */
 .mat-form-field-wrapper {
     padding-bottom: 0!important;
 }
@@ -19,9 +19,13 @@ h3{
 }
 h4{
     text-align: center;
-  
+    font-size: large;
+    font-weight: 800;
     padding: 6px;
     color: #fff;
+}
+h1{
+    text-align: center;
 }
 .c{
 background: chocolate;
@@ -42,4 +46,18 @@ color: white;
 .dc{
 background: turquoise;
 color: white;
+}
+.sect>.mat-card{
+    padding: 0px;
+}
+.sect>.mat-card h1{
+    padding: 11px;
+    background: rgb(255, 255, 255);
+    color: rgb(121 118 118);
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 20px;
+}
+.sect>.mat-card h4{
+    padding: 10px;
 }
