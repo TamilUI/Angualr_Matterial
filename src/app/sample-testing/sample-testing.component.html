@@ -1,0 +1,24 @@
+<p>sample-testing works!</p>
+
+
+
+<div class="contauner">
+
+    <mat-card>
+<button type="submit" class="btn btn-success" [disabled]='isdisabled' (click)="butonclcik1()">SUBMIT</button> <Br> <Br>
+    
+<p>{{title1}}</p>
+
+<button type="submit" class="btn btn-success" [disabled]='btn2' id="title2" (click)="butonclcik2()">SUBMIT2</button>
+<br><br>
+<p>{{title2}}</p>
+
+
+<button (click)="toggle()">Hide/Show</button>
+
+
+<p *ngIf='displayChild'>This shoew anf hide</p>
+
+    </mat-card>
+
+</div>

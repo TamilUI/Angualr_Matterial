@@ -26,33 +26,33 @@ export class ServiceService {
     return this.http.get(this.url);
   }
 
+  baseUrl: any='http://localhost:3000/' 
 
   postEmploye(data:any){
-  return this.http.post<any>("http://localhost:3000/posts/", data)
+  return this.http.post<any>(this.baseUrl+"posts/", data)
   .pipe(map((res:any)=>{
   return res;
   }))
   }
 
   getEmploye(){
-  return this.http.get<any>("http://localhost:3000/posts/")
+  return this.http.get<any>(this.baseUrl +'posts/')
   .pipe(map((res:any)=>{
   return res;
   }))
   }
 
   updatEmploye(data:any,id: number){
-    return this.http.put<any>("http://localhost:3000/posts/"+id, data)
+    return this.http.put<any>(this.baseUrl +'posts/'+id, data)
     .pipe(map((res:any)=>{
     return res;
     }))
-    }
+ }
 
   deletEmploye(id : number){
-      return this.http.delete<any>("http://localhost:3000/posts/"+id)
+      return this.http.delete<any>(this.baseUrl +'posts/'+id)
       .pipe(map((res:any)=>{
       return res;
       }))
   }
-
 }

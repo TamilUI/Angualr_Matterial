@@ -1,6 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { MatSnackBar } from "@angular/material/snack-bar";
-import { SnackBarService } from '../snack-bar.service';
+
 @Component({
   selector: 'app-test',
   templateUrl: './test.component.html',
@@ -8,7 +7,12 @@ import { SnackBarService } from '../snack-bar.service';
 })
 export class TestComponent implements OnInit {
 
-  constructor(public snackBar: MatSnackBar, private snackbarService: SnackBarService) { }
+
+  
+
+  constructor() { }
+  
+ 
   
   
   ngOnInit(): void {

@@ -19,7 +19,7 @@
         <br> <br>
         <h1>Currency Pipe</h1>  
         <b>{{6589.23 | currency:"USD"}}</b><br/>  
-        <b>{{6589.23 | currency:"USD":true}}</b> //Boolean true is used to get the sign of the currency.  
+        <b>{{6589.23 | currency:"USD"}}</b> //Boolean true is used to get the sign of the currency.  
        
         <br> <br>
        
@@ -50,9 +50,11 @@
        
     </div>   
 
+    <Br>
 
-
-    
+     
+      <p>{{'  foo  ' | rtrim }}</p> <!-- Output: "  foo" -->
+      <p>{{'foo bar foo' | slugify}}</p> <!-- Output: "foobar" -->
   </mat-card>
 
 

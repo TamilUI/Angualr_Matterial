@@ -19,11 +19,12 @@ export class InsertPostUpdateDeleteComponent implements OnInit  {
   
   formValue! : FormGroup  
   employeModelobj: EmployeeModdel = new EmployeeModdel();
-  employeeData :any;
+  employeeData: any = [];
   showadd !:boolean;
   showupdate !:boolean;
   errorMsg : String = "error";
   slice:any;
+  isEmailIdAvailable: boolean = true;
 
 
   
@@ -70,26 +71,19 @@ constructor(private formbuilder:FormBuilder, private api: ServiceService, public
         this.formValue.value.lastName.hasError(this.errorMsg!)
 
       } else {
-        this.employeModelobj.firstName = this.formValue.value.firstName;
-        this.employeModelobj.lastName = this .formValue.value.lastName;
-        this.employeModelobj.email = this.formValue.value.email;
-        this.employeModelobj.mobile= this.formValue.value.mobile;
-        this.employeModelobj.salary= this.formValue.value.salary;
+        for(let i=5; i<this.employeeData.length; i++){
+          if(this.formValue.value.email == this.employeeData[i].email){
+            this.isEmailIdAvailable = false
+            console.log('this email it alredy avialble - '+this.isEmailIdAvailable)
+            break
+          }else {
+            this.isEmailIdAvailable = true
+            console.log('this email it not alredy avialble - '+this.isEmailIdAvailable+", chkEmail: "+this.formValue.value.email+" - "+this.employeeData[i].email)
+          }
+        }
+        
+        this.insertData(this.isEmailIdAvailable)
       }
-      
-      this.api.postEmploye (this.employeModelobj)
-        .subscribe(res=>{
-          console.log(res);
-          // alert("Employee added Successfully")
-          this.snackbarService.postEmployeeDetails('Employee added Successfully..!');
-          let ref= document.getElementById('cancel')
-          ref?.click();
-          this.formValue.reset();
-          this.getallemploye();
-        },
-        err=>{
-          alert('please contact admin');
-        })
     
       // this.api.postEmploye(this.employeModelobj)
       // .subscribe(res=>{
@@ -105,11 +99,40 @@ constructor(private formbuilder:FormBuilder, private api: ServiceService, public
       // })
       
     }
+
+    insertData(isEmailAvailable: boolean){
+      console.log('this email it alredy avialble -2 '+isEmailAvailable)
+      if(isEmailAvailable){
+        this.employeModelobj.firstName = this.formValue.value.firstName;
+        this.employeModelobj.lastName = this .formValue.value.lastName;
+        this.employeModelobj.email = this.formValue.value.email;
+        this.employeModelobj.mobile= this.formValue.value.mobile;
+        this.employeModelobj.salary= this.formValue.value.salary;
+
+        this.api.postEmploye (this.employeModelobj)
+        .subscribe(res=>{
+          console.log(res);
+          // alert("Employee added Successfully")
+          this.snackbarService.postEmployeeDetails('Employee added Successfully..!');
+          let ref= document.getElementById('cancel')
+          ref?.click();
+          this.formValue.reset();
+          this.getallemploye();
+        },
+        err=>{
+          alert('please contact admin');
+        })
+      }else {
+        this.errorMsg = "Sorry!, Your email-id already exists"
+        alert(this.errorMsg);
+      }
+    }
     
     getallemploye(){
     this.api.getEmploye()
     .subscribe(res=>{
       this.employeeData = res;
+      
     })
     }
 
@@ -127,14 +150,14 @@ constructor(private formbuilder:FormBuilder, private api: ServiceService, public
     
     onEdit(emplolye : any){
     
-    this.showadd = false;
-    this.showupdate = true;   
-    this.employeModelobj.id=emplolye.id;  
-    this.formValue.controls['firstName'].setValue(emplolye.firstName);
-    this.formValue.controls['lastName'].setValue(emplolye.lastName);
-    this.formValue.controls['email'].setValue(emplolye.email);
-    this.formValue.controls['mobile'].setValue(emplolye.mobile);
-    this.formValue.controls['salary'].setValue(emplolye.salary);
+      this.showadd = false;
+      this.showupdate = true;   
+      this.employeModelobj.id=emplolye.id;  
+      this.formValue.controls['firstName'].setValue(emplolye.firstName);
+      this.formValue.controls['lastName'].setValue(emplolye.lastName);
+      this.formValue.controls['email'].setValue(emplolye.email);
+      this.formValue.controls['mobile'].setValue(emplolye.mobile);
+      this.formValue.controls['salary'].setValue(emplolye.salary);
     
     
     }

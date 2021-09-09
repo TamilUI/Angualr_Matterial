@@ -63,19 +63,19 @@
           </div>
           
           <div class="col-md-6" [hidden]="selececategorys !== 'Others'" >
-            <mat-form-field appearance="outline">
-              <mat-label>Others</mat-label>
-              <input matInput type="text" name="Others" [disabled]="selececategorys !== 'Others'"   [(ngModel)]="Others" required >
-            
-             
-            </mat-form-field>
-          </div>
+          <mat-form-field appearance="outline">
+            <mat-label>Others</mat-label>
+            <input matInput type="text" name="Others" [disabled]="selececategorys !== 'Others'"   [(ngModel)]="Others" required >
+          
+           
+          </mat-form-field>
+        </div>
 
           <div class="col-md-6">
       
             <mat-form-field appearance="outline">
                 <mat-label>Choose DOB</mat-label>
-                <input matInput [matDatepicker]="picker"  name="DOB" #input="ngModel" [(ngModel)]="DOB"    [min]="minDate" [max]="maxDate" required>
+                <input matInput [matDatepicker]="picker" disabled name="DOB" #input="ngModel" [(ngModel)]="DOB"    [min]="minDate" [max]="maxDate" required>
                 <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                 <mat-datepicker #picker disabled="false"></mat-datepicker>
                 <mat-error *ngIf="input.hasError('matDatepickerMax')">Date should be inferior</mat-error>

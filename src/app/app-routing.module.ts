@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { ApicalldataComponent } from './apicalldata/apicalldata.component';
 import { ChildComponent } from './child/child.component';
+import { CoronaComponent } from './corona/corona.component';
 import { InjactableComponent } from './injactable/injactable.component';
 import { InsertPostUpdateDeleteComponent } from './insert-post-update-delete/insert-post-update-delete.component';
 import { LearningangularComponent } from './learningangular/learningangular.component';
@@ -10,6 +11,7 @@ import { LocalstorageSessionstorageComponent } from './localstorage-sessionstora
 import { LoginComponent } from './login/login.component';
 import { ObservableComponent } from './observable/observable.component';
 import { ParentComponent } from './parent/parent.component';
+import { SampleTestingComponent } from './sample-testing/sample-testing.component';
 import { TableComponent } from './table/table.component';
 import { TestComponent } from './test/test.component';
 
@@ -27,6 +29,8 @@ const routes: Routes = [
   { path: 'localstorge', component:LocalstorageSessionstorageComponent},
   { path: 'inject', component:InjactableComponent},
   { path: 'observable', component:ObservableComponent},
+  { path:  'testing' , component:SampleTestingComponent},
+  { path:  'Corona', component:CoronaComponent},
   
   { path: 'lazyloading',loadChildren:()=> import('./blog/blog.module').then(m=>m.BlogModule)}
 

@@ -60,7 +60,9 @@ import { LocalstorageSessionstorageComponent } from './localstorage-sessionstora
 import { InjactableComponent } from './injactable/injactable.component';
 import { ServiceService } from './service.service';
 import { ObservableComponent } from './observable/observable.component';
-
+import {NgPipesModule} from 'ngx-pipes';
+import { SampleTestingComponent } from './sample-testing/sample-testing.component';
+import { CoronaComponent } from './corona/corona.component';
 
 @NgModule({
   declarations: [
@@ -77,9 +79,12 @@ import { ObservableComponent } from './observable/observable.component';
     LocalstorageSessionstorageComponent,
     InjactableComponent,
     ObservableComponent,
+    SampleTestingComponent,
+    CoronaComponent,
     
   ],
   imports: [
+    NgPipesModule,
     BrowserModule,
     ReactiveFormsModule,
     AppRoutingModule,MatBadgeModule,

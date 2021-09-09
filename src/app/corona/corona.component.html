@@ -1,0 +1,57 @@
+
+<div class="container mt-3">
+<mat-card>
+    <div class="bg">
+    <h3 class="d-flex justify-content-center">Covid-19 Real Time Update All Country</h3><br>
+
+    <div class=" d-flex justify-content-center">
+        <mat-form-field color="accent" class="bgselect"  appearance="outline">
+            <mat-label >Select Country</mat-label>
+            <mat-select  [(ngModel)]="country" (change)='getcountry($event.target.value)'>
+              <mat-option *ngFor="let country of countrys" [value]='country.ISO2'>
+                {{country.Country}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+    </div>
+    
+    <div class="d-flex justify-content-center mt-3">
+
+        <button color="accent" mat-raised-button (click)="getcoronadata()">Submit</button>
+      </div>
+</div>
+</mat-card>
+
+<div class="d-flex justify-content-between">
+    
+<mat-card class="c">
+ <h1>Country</h1>
+ <Br>
+    <h4>{{Country}}</h4>
+</mat-card>
+
+
+<mat-card class="cc">
+    <h1>Date </h1>
+    <Br>
+        <h4>{{Date}}</h4>
+</mat-card>
+<mat-card class="d">
+    <h1>Confirmed Case</h1>
+    <Br>
+        <h4>{{Confirmed}}</h4>
+</mat-card>
+
+<mat-card class="rc">
+    <h1>Recoverd Case</h1>
+    <Br>
+        <h4>{{Recovered}}</h4>
+</mat-card>
+
+<mat-card class="dc">
+    <h1>Death Case</h1>
+    <Br>
+        <h4>{{Deaths}}</h4>
+</mat-card>
+</div>
+</div>

@@ -65,7 +65,9 @@ export class LearningangularComponent implements OnInit {
   // }
 
 
-  constructor() {}
+  constructor() {
+    
+  }
 
   ngOnInit(): void {
 

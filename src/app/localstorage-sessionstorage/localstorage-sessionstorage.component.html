@@ -29,9 +29,7 @@
       <div *ngIf="myform.controls['Password'].errors.required">
         Password is required.
       </div>
-      <!-- <div *ngIf="f.Password.errors.required">Password is required</div>
-      <div *ngIf="f.Password.errors.minlength">Password must be at least 6 characters</div> -->
-
+     
       </div>
 
     <button type="submit" [disabled]="!myform.valid" class="btn btn-primary">Submit</button>
@@ -47,4 +45,10 @@
     <p class="mx-4 mt-4" style="font-size: 20px;font-weight: 800;color: orange;">{{_count.counter}}</p>
     
    <p>{{myId}}</p>
+  <p>{{title}}</p>
+
+   <!-- <button [disabled]="buttonDisabled" (click)="onSave()">Save</button>
+   <input type="text" (click)="onSaves()"> -->
+
+
   

@@ -10,18 +10,17 @@ import { ServiceService } from '../service.service';
 })
 export class LocalstorageSessionstorageComponent implements OnInit {
   
-  title='localstorage';
+  title='';
   myId:any
   myform:any
   // mydata:any;
   Username!: string;
   Password!: string;
-
+  buttonDisabled: boolean= false
 
 
   
   constructor( public _count: ServiceService , private fb: FormBuilder) {
-
    this.createForm();
    }
 
@@ -32,6 +31,7 @@ export class LocalstorageSessionstorageComponent implements OnInit {
      });
    }
  
+  
 
   ngOnInit(): void {
 
